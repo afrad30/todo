@@ -1,10 +1,24 @@
-const container=document.querySelector('.itemlist')
+const container=document.querySelector('.container')
 const inputItem=document.querySelector('.input')
-const addButton=document.querySelector('.additem')
 
 //add items
-addButton.addEventListener('click',e=>{
-    additem()
+
+inputItem.addEventListener('keydown',e=>{
+    if(e.keyCode===13){
+        additem()
+    }
+})
+
+container.addEventListener('click',e=>{
+    if (e.target.className==="button-done") {
+    e.target.style.display='none'
+    e.target.parentElement.children[0].style.textDecoration = "line-through";
+    e.target.parentElement.children[0].style.textDecorationColor = "maroon";
+  }else if(e.target.className==='button-remove'){
+      e.target.parentElement.style.display='none'
+  }else if(e.target.className==="additem"){
+      additem()
+  }
 })
 
 function additem (){
@@ -13,8 +27,8 @@ function additem (){
    }else{
        var html=`<li class="item">
     <span class="text">${inputItem.value}</span>
-    <span class="button-done">done</span>
-    <span class="button-remove">remove</span>
+    <button class="button-done">done</button>
+    <button class="button-remove">remove</button>
 </li>`
 }
    
@@ -25,11 +39,3 @@ inputItem.value=''
 
 //event in item
 //remove item
-container.addEventListener('click',e=>{
-  if (e.target.claseName="button-remove") {
-      e.target.style.display='none'
-  }else if(e.target.className=='button-done'){
-      
-      e.target.parentElement.style.display='none'
-  }
-})

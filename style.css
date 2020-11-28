@@ -1,20 +1,37 @@
+body{
+  background-color:black;
+}
 .container {
   position: absolute;
   width: 35%;
   margin-left: 35%;
   border: 2px solid black;
+  background-color: blueviolet;
 }
 .title {
   text-align: center;
+  color: whitesmoke;
 }
 .input {
   margin-left: 12%;
   width: 60%;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 25px;
+  border: .5px solid whitesmoke;
 }
-
+.additem{
+  font-size: 16px;
+  border-radius:5px;
+  border:.5px solid blueviolet;
+  background-color:rgb(226, 220, 231);
+  height: 25px;
+  padding:3px 10px 3px  10px;
+}
 li {
   list-style-type: none;
   border: 1px solid black;
+  border-radius: 5px;
   margin-left: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -23,12 +40,21 @@ li {
   position: relative;
   width: 80%;
   height: 20px;
+  background-color: whitesmoke;
 }
-.item__text {
+.text {
   float: left;
   position: relative;
+  margin-left: 10px;
+  font-size: 18px;
 }
-.btn__done,
-.btn__remove {
+.button-done,
+.button-remove {
   float: right;
+  margin-right: 10px;
+  font-size: 14px;
+  background-color:rgb(219, 219, 233) ;
+  border:.5px solid rgb(251, 250, 252);
+  border-radius:10px;
+
 }
